@@ -1,0 +1,12 @@
+#!/bin/bash -e
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+case "$1" in
+  -v|--version)
+    version="$2"
+esac
+
+PRIMARY_CART=$(ruby_sdk "primary_cartridge_manifest['Name']")
+client_message "The primary cartridge name is: ${PRIMARY_CART}"
+
