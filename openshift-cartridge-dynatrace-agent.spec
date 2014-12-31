@@ -28,7 +28,7 @@ cp -r * %{buildroot}%{cartridgedir}/
 %dir %{cartridgedir}
 %attr(0755,-,-) %{cartridgedir}/bin/
 %{cartridgedir}/env
-%{cartridgedir}/metadata
+%dir %{cartridgedir}/metadata
 %{cartridgedir}/versions
 %{cartridgedir}/metadata/manifest.yml
 %doc %{cartridgedir}/README.md
