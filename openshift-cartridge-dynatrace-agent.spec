@@ -9,7 +9,7 @@ URL:		http://www.dynatrace.com
 Source0:	https://github.com/akirasoft/openshift-cartridge-dynatrace-agent/archive/master.zip
 Requires:       rubygem(openshift-origin-node)
 Requires:       openshift-origin-node-util
-BuildArch: noarch
+BuildArch:      x86_64
 
 %description
 Dynatrace Monitoring for Java applications deployed on OpenShift JBoss cartridges
