@@ -26,11 +26,10 @@ cp -r * %{buildroot}%{cartridgedir}/
 %files
 %defattr(-,root,root,-)
 %dir %{cartridgedir}
-%dir %{cartridgedir}/bin
+%attr(0755,-,-) %{cartridgedir}/bin/
 %dir %{cartridgedir}/env
 %dir %{cartridgedir}/metadata
 %dir %{cartridgedir}/versions
-%attr(0755,-,-) %{cartridgedir}/bin/
 %{cartridgedir}/metadata/manifest.yml
 %doc %{cartridgedir}/README.md
 %doc %{cartridgedir}/LICENSE
