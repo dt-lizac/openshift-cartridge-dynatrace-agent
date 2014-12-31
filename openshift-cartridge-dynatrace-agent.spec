@@ -11,6 +11,9 @@ Requires:       rubygem(openshift-origin-node)
 Requires:       openshift-origin-node-util
 BuildArch:      x86_64
 %define _unpackaged_files_terminate_build 0
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+
+
 %description
 Dynatrace Monitoring for Java applications deployed on OpenShift JBoss cartridges
 
