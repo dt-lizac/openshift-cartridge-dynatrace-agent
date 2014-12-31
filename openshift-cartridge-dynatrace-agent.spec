@@ -6,7 +6,6 @@ Summary:	Dynatrace Monitoring for Java applications deployed on OpenShift JBoss 
 Group:		Applications/Internet
 License:	ASL 2.0
 URL:		http://www.dynatrace.com
-Source0:	https://github.com/akirasoft/openshift-cartridge-dynatrace-agent/archive/master.zip
 Requires:       rubygem(openshift-origin-node)
 Requires:       openshift-origin-node-util
 BuildArch:      x86_64
