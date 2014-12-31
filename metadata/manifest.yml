@@ -1,40 +1,36 @@
-
+---
 Name: dynatrace-agent
+Vendor: Dynatrace
 Cartridge-Short-Name: DYNATRACE_AGENT
-Display-Name: Dynatrace JBOSS Cartridge 0.0.1
-Description: "A cartridge to enable Dynatrace instrumentation of your Jboss (AS,ES,EWS) application"
 Version: '6.0.0.7000'
-Versions: 
-- '6.0.0.7000'
-License: ASL 2.0
-Vendor: dynatrace
-Cartridge-Version: 0.0.1
+Architecture: noarch
+Display-Name: Dynatrace Agent 6 (EAP, EWS)
+Description: "A cartridge to enable Dynatrace instrumentation of your Jboss (AS,ES,EWS) application"
+License: "ASL 2.0"
+Cartridge-Version: '0.0.1'
 Cartridge-Vendor: dynatrace
 Categories:
-- plugin
 - embedded
-- dynatrace
+- plugin
 Provides:
+- dynatrace
 - agentpath
+- dynatrace-java-agent-6
+- dynatrace-agent-6
+- dynatrace-agent
 Cart-Data:
 - Key: DYNATRACE_COLLECTOR
   Type: environment
-  Description: This is the Hostname or IP address [and Port] of the the Dynatrace Collector. (eg. mycollector:9998) 
-- KEY: DYNATRACE_AGENT_NAME
+  Description: "This is the Hostname or IP address [and Port] of the the Dynatrace Collector. (eg. mycollector:9998)"
+- Key: DYNATRACE_AGENT_NAME
   Type: environment
   Description: This is the name of the Dynatrace Agent
-Publishes:
-Subscribes:
-Group-Overides:
-  - components:
-    - web_framework
-    - dynatrace
-Endpoints:
-Source-Url: http://gitlab.internal.akirasoft.com/root/dynatrace-agent.git
+Group-Overrides:
+- components:
+  - dynatrace
+  - web_framework
 Scaling:
   Min: 1
   Max: -1
-Install-Build-Required: false
 Metrics:
 - uptime
-
