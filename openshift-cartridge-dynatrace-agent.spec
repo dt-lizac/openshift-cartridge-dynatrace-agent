@@ -1,6 +1,6 @@
 %global cartridgedir %{_libexecdir}/openshift/cartridges/dynatrace-agent-6
 Name:		openshift-cartridge-dynatrace-agent
-Version:	0.0.1
+Version:	0.0.2
 Release:	1%{?dist}
 Summary:	Dynatrace Monitoring for Java applications deployed on OpenShift JBoss cartridges
 Group:		Applications/Internet
@@ -36,5 +36,8 @@ cp -r * %{buildroot}%{cartridgedir}/
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Wed Dec 31 2014 akirasoft <akirasoft@hotmail.com> 0.0.2-1
+- new package built with tito
+
 * Wed Dec 31 2014 Michael Villiger <michael.villiger@dynatrace.com> 0.0.1
 - Initial creation
