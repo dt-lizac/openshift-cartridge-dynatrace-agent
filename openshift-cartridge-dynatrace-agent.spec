@@ -18,7 +18,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Dynatrace Monitoring for Java applications deployed on OpenShift JBoss cartridges
 
 %prep
-#%setup -q
+%setup
 
 %build
 
