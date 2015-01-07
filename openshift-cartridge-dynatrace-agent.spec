@@ -1,12 +1,13 @@
 %global cartridgedir %{_libexecdir}/openshift/cartridges/dynatrace-agent-6
 Name:		openshift-cartridge-dynatrace-agent
-Version:	0.0.4
+Version:	0.0.5
 Release:	1%{?dist}
 Summary:	Dynatrace Monitoring for Java applications deployed on OpenShift JBoss cartridges
 Group:		Applications/Internet
 License:	ASL 2.0
 URL:		http://www.dynatrace.com
-Source0:	https://github.com/akirasoft/openshift-cartridge-dynatrace-agent/archive/master.zip
+#Source0:	https://github.com/akirasoft/openshift-cartridge-dynatrace-agent/archive/master.zip
+Source0:        %{name}-%{version}.tar.gz
 Requires:       rubygem(openshift-origin-node)
 Requires:       openshift-origin-node-util
 BuildArch:      x86_64
@@ -38,6 +39,9 @@ cp -r * %{buildroot}%{cartridgedir}/
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Wed Jan 07 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.5-1
+- specfile change to source0
+
 * Wed Jan 07 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.4-1
 - changed spec
 - changed tito.props (akirasoft@hotmail.com)
