@@ -1,6 +1,6 @@
 %global cartridgedir %{_libexecdir}/openshift/cartridges/dynatrace-agent-6
 Name:		openshift-cartridge-dynatrace-agent
-Version:	0.0.3
+Version:	0.0.4
 Release:	1%{?dist}
 Summary:	Dynatrace Monitoring for Java applications deployed on OpenShift JBoss cartridges
 Group:		Applications/Internet
@@ -38,6 +38,15 @@ cp -r * %{buildroot}%{cartridgedir}/
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Wed Jan 07 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.4-1
+- changed spec
+- changed tito.props (akirasoft@hotmail.com)
+- adding setup back again (akirasoft@hotmail.com)
+- Updated spec file to remove comment out setup
+  (dynatrace@broker.openshift.local)
+- updated tito build props (akirasoft@hotmail.com)
+- specfiles are stupid (akirasoft@hotmail.com)
+
 * Wed Dec 31 2014 akirasoft <akirasoft@hotmail.com> 0.0.3-1
 - specfile changes (akirasoft@hotmail.com)
 - adjusted arch for spec file (akirasoft@hotmail.com)
