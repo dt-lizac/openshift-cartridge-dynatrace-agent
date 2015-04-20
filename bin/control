@@ -7,6 +7,7 @@ function status() {
 }
 
 function start() {
+  env_dir="${OPENSHIFT_DYNATRACE_AGENT_DIR}env"
   client_result "Dynatrace agent started."
 }
 
