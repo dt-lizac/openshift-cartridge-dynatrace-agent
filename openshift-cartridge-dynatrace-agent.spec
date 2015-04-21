@@ -1,6 +1,6 @@
 %global cartridgedir %{_libexecdir}/openshift/cartridges/dynatrace-agent-6
 Name:		openshift-cartridge-dynatrace-agent
-Version:	0.0.7
+Version:	0.0.8
 Release:	1%{?dist}
 Summary:	Dynatrace Monitoring for Java applications deployed on OpenShift JBoss cartridges
 Group:		Applications/Internet
@@ -39,6 +39,10 @@ cp -r * %{buildroot}%{cartridgedir}/
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Tue Apr 21 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.8-1
+- removed erb file, moved JAVA_OPTS_EXT to start action within control script
+  (akirasoft@hotmail.com)
+
 * Tue Apr 21 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.7-1
 removed erb file, moved JAVA_OPTS_EXT to start action within control script
 - 
