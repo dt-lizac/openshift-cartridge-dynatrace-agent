@@ -24,5 +24,6 @@ function restart() {
 case "$1" in
   status)	status ;;
   start)	start ;;
+  restart)      restart ;;
   *)		exit 0;
 esac
