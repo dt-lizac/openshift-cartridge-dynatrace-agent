@@ -7,7 +7,7 @@ Architecture: noarch
 Display-Name: Dynatrace Agent 6 (EAP, EWS)
 Description: "A cartridge to enable Dynatrace instrumentation of your Jboss (AS,ES,EWS) application"
 License: "ASL 2.0"
-Cartridge-Version: '0.0.1'
+Cartridge-Version: '0.0.2'
 Cartridge-Vendor: dynatrace
 Categories:
 - embedded
