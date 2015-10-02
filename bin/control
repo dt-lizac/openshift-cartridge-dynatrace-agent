@@ -8,14 +8,14 @@ function status() {
 
 function start() {
   env_dir="${OPENSHIFT_DYNATRACE_AGENT_DIR}env"
-  set_env_var 'JAVA_OPTS_EXT' "-agentpath:${OPENSHIFT_DYNATRACE_AGENT_DIR}versions/dynatrace-6.0.0/agent/lib64/libdtagent.so=name=$DYNATRACE_AGENT_NAME,server=$DYNATRACE_COLLECTOR" $env_dir
+  set_env_var JAVA_OPTS_EXT "-agentpath:${OPENSHIFT_DYNATRACE_AGENT_DIR}versions/dynatrace-6.0.0/agent/lib64/libdtagent.so=name=$DYNATRACE_AGENT_NAME,server=$DYNATRACE_COLLECTOR" $env_dir
   export JAVA_OPTS_EXT="-agentpath:${OPENSHIFT_DYNATRACE_AGENT_DIR}versions/dynatrace-6.0.0/agent/lib64/libdtagent.so=name=$DYNATRACE_AGENT_NAME,server=$DYNATRACE_COLLECTOR"
   client_result "Dynatrace agent started."
 }
 
 function restart() {
   env_dir="${OPENSHIFT_DYNATRACE_AGENT_DIR}env"
-  set_env_var 'JAVA_OPTS_EXT' "-agentpath:${OPENSHIFT_DYNATRACE_AGENT_DIR}versions/dynatrace-6.0.0/agent/lib64/libdtagent.so=name=$DYNATRACE_AGENT_NAME,server=$DYNATRACE_COLLECTOR" $env_dir
+  set_env_var JAVA_OPTS_EXT "-agentpath:${OPENSHIFT_DYNATRACE_AGENT_DIR}versions/dynatrace-6.0.0/agent/lib64/libdtagent.so=name=$DYNATRACE_AGENT_NAME,server=$DYNATRACE_COLLECTOR" $env_dir
   export JAVA_OPTS_EXT="-agentpath:${OPENSHIFT_DYNATRACE_AGENT_DIR}versions/dynatrace-6.0.0/agent/lib64/libdtagent.so=name=$DYNATRACE_AGENT_NAME,server=$DYNATRACE_COLLECTOR"
   client_result "Dynatrace agent started."
 }
