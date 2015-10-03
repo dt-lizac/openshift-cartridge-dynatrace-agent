@@ -11,9 +11,15 @@ function start() {
   client_result "Dynatrace agent started."
 }
 
+function restart() {
+  env_dir="${OPENSHIFT_DYNATRACE_AGENT_DIR}env"
+  client_result "Dynatrace agent started."
+}
+
 
 case "$1" in
   status)	status ;;
   start)	start ;;
+  restart)      restart ;;
   *)		exit 0;
 esac
