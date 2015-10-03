@@ -25,6 +25,9 @@ Cart-Data:
 - Key: DYNATRACE_AGENT_NAME
   Type: environment
   Description: This is the name of the Dynatrace Agent
+- Key: DYNATRACE_LIB_DIR
+  Type: environment
+  Description: Select "lib" for a 32 bits agent and "lib64" for a 64 bits agents
 Group-Overrides:
 - components:
   - dynatrace
