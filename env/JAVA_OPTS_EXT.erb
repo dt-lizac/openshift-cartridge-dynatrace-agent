@@ -1,1 +1,1 @@
--agentpath:<%= ENV['OPENSHIFT_DYNATRACE_AGENT_DIR'] %>versions/dynatrace-6.0.0/agent/lib64/libdtagent.so=name=<%= ENV['DYNATRACE_AGENT_NAME'] %>,server=<%= ENV['DYNATRACE_COLLECTOR'] %>
+-agentpath:<%= ENV['OPENSHIFT_DYNATRACE_AGENT_DIR'] %>versions/dynatrace-6.0.0/agent/<%= ENV['DYNATRACE_LIB_DIR'] %>/libdtagent.so=name=<%= ENV['DYNATRACE_AGENT_NAME'] %>,server=<%= ENV['DYNATRACE_COLLECTOR'] %>
