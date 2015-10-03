@@ -19,6 +19,7 @@ Install
   rhc add-cartridge -a <your_app_name> \
     -e DYNATRACE_COLLECTOR=<your_dynatrace_collector> \
     -e DYNATRACE_AGENT_NAME=<your_agent_name> \
+    -e DYNATRACE_LIB_DIR=[lib|lib64] \
     -c <git_server_of_cartridge>/latest/metadata/manifest.yml
 ```
 
