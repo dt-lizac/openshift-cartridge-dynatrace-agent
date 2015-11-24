@@ -7,19 +7,48 @@ function status() {
 }
 
 function start() {
-  env_dir="${OPENSHIFT_DYNATRACE_AGENT_DIR}env"
-  client_result "Dynatrace agent started."
-}
+	#Detecting primary cartridge
+	PRIMARY_CART=$(ruby_sdk "primary_cartridge_manifest['Name']")
+	client_message "The primary cartridge name is: ${PRIMARY_CART}"
 
-function restart() {
-  env_dir="${OPENSHIFT_DYNATRACE_AGENT_DIR}env"
-  client_result "Dynatrace agent started."
-}
+
+	HOOKS_ABS_PATH="${OPENSHIFT_REPO_DIR}.openshift/action_hooks/"
+	if [ ! -d "${HOOKS_ABS_PATH}" ]; then
+		mkdir -p $HOOKS_ABS_PATH
+	fi
+
+	# Using the hooks for primary cartridge to insert the agentpath options for Dynatrace 
+	HOOKS="${HOOKS_ABS_PATH}pre_start_${PRIMARY_CART}
+	${HOOKS_ABS_PATH}pre_restart_${PRIMARY_CART}
+	${HOOKS_ABS_PATH}pre_reload_${PRIMARY_CART}"
+
+	CONF_COMMAND="source \${OPENSHIFT_DYNATRACE_AGENT_DIR}conf/dt_agent.conf"
+
+	for hook in $HOOKS; do
+	  client_message "Processing $hook"
+
+	  if [ ! -e "$hook" ]; then
+	    echo '#!/bin/bash' >> $hook
+	    chmod 700 $hook
+	  fi
+
+	  if [ -w "$hook" ]; then
+	  	if grep -Fxq "$CONF_COMMAND" "$hook" ; then
+	    	client_message "The cartridge config command already exists."
+	  	else
+	  		echo -e "\n$CONF_COMMAND" >> $hook
+	  	fi	
+	  else
+	    client_message "WARNING: The file $hook is not writable."
+	  fi
+	done
+
+
+	client_message "Dynatrace JBOSS cartridge is started." }
 
 
 case "$1" in
   status)	status ;;
   start)	start ;;
-  restart)      restart ;;
   *)		exit 0;
 esac

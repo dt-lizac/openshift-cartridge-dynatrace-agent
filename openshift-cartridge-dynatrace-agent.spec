@@ -31,6 +31,7 @@ cp -r * %{buildroot}%{cartridgedir}/
 %defattr(-,root,root,-)
 %dir %{cartridgedir}
 %attr(0755,-,-) %{cartridgedir}/bin/
+%attr(0755,-,-) %{cartridgedir}/conf/
 %{cartridgedir}/env
 %dir %{cartridgedir}/metadata
 %{cartridgedir}/versions
@@ -39,50 +40,3 @@ cp -r * %{buildroot}%{cartridgedir}/
 %doc %{cartridgedir}/LICENSE
 
 %changelog
-* Tue Apr 21 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.12-1
-- incremented cartridge version in manifest.yml (akirasoft@hotmail.com)
-
-* Tue Apr 21 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.11-1
-- duh, forgot to add restart to case in control (akirasoft@hotmail.com)
-
-* Tue Apr 21 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.10-1
-- updated control script to add restart function (akirasoft@hotmail.com)
-
-* Tue Apr 21 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.9-1
--         new file:   env/JAVA_OPTS_EXT.erb as placeholder
-
-* Tue Apr 21 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.8-1
-- removed erb file, moved JAVA_OPTS_EXT to start action within control script
-  (akirasoft@hotmail.com)
-
-* Tue Apr 21 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.7-1
-removed erb file, moved JAVA_OPTS_EXT to start action within control script
-- 
-
-* Mon Apr 20 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.6-1
-- added env-dir to control script (akirasoft@hotmail.com)
-
-* Wed Jan 07 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.5-1
-- specfile change to source0
-
-* Wed Jan 07 2015 Mike Villiger <akirasoft@hotmail.com> 0.0.4-1
-- changed spec
-- changed tito.props (akirasoft@hotmail.com)
-- adding setup back again (akirasoft@hotmail.com)
-- Updated spec file to remove comment out setup
-  (dynatrace@broker.openshift.local)
-- updated tito build props (akirasoft@hotmail.com)
-- specfiles are stupid (akirasoft@hotmail.com)
-
-* Wed Dec 31 2014 akirasoft <akirasoft@hotmail.com> 0.0.3-1
-- specfile changes (akirasoft@hotmail.com)
-- adjusted arch for spec file (akirasoft@hotmail.com)
-- still more spec file changes (akirasoft@hotmail.com)
-- more spec file changes (akirasoft@hotmail.com)
-- updating spec (akirasoft@hotmail.com)
-- final spec file (akirasoft@hotmail.com)
-* Wed Dec 31 2014 akirasoft <akirasoft@hotmail.com> 0.0.2-1
-- new package built with tito
-
-* Wed Dec 31 2014 Michael Villiger <michael.villiger@dynatrace.com> 0.0.1
-- Initial creation
