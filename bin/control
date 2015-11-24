@@ -44,11 +44,19 @@ function start() {
 	done
 
 
-	client_message "Dynatrace JBOSS cartridge is started." }
+	client_message "Dynatrace JBOSS cartridge is started." 
+}
 
 
 case "$1" in
-  status)	status ;;
-  start)	start ;;
-  *)		exit 0;
+  start)
+    start
+    ;;
+  status)               
+    status 
+    ;;
+  *)        
+    exit 0
 esac
+
+exit 0
